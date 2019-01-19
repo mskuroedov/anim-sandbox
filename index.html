@@ -68,9 +68,9 @@
     $(document).ready(function () {
         $('.test-img').addClass('animated');
         var id = 1;
-        var timerCss = $('.letters').css('animation');
-        var timerIndex = parseInt(timerCss.search(/\d/));
-        var timer = parseInt(timerCss[timerIndex])*1000;
+        // var timerCss = $('.letters').css('animation');
+        // var timerIndex = parseInt(timerCss.search(/\d/));
+        // var timer = parseInt(timerCss[timerIndex])*1000;
 
         setTimeout(function () {
             var i = setInterval(function () {
@@ -80,8 +80,8 @@
                 }
                 $('.letters').attr('src','./assets/letters-' + id + '.svg')
 
-            }, timer);
-        }, timer*0.375);
+            }, 2000);
+        }, 750);
 
     })
 </script>
