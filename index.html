@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .test-img {
+            margin: auto;
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .letters {
+
+            position: relative;
+            top: 4.5%;
+            left: 5.5%;
+            width: 80%;
+            z-index: 20;
+        }
+        .base {
+            left: 0;
+            position: absolute;
+            margin: auto;
+            width: 100%;
+
+        }
+
+        .cover{
+            width: 84%;
+            position: absolute;
+            z-index: 20;
+            left: 16%;
+            top: 21%;
+        }
+
+        .test-img.animated .letters{
+            animation: anim 2s ease-in-out infinite;
+
+        }
+        @keyframes anim {
+            0% {
+                transform: rotate(0deg);
+
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="test-img ">
+    <img src="./assets/letters-1.svg" alt="" class="letters">
+    <img src="./assets/test-base.svg" alt="" class="base">
+    <img src="./assets/test-cover.svg" alt="" class="cover">
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.test-img').addClass('animated');
+        var id = 1;
+        var timerCss = $('.letters').css('animation');
+        var timerIndex = parseInt(timerCss.search(/\d/));
+        var timer = parseInt(timerCss[timerIndex])*1000;
+
+        setTimeout(function () {
+            var i = setInterval(function () {
+                id++;
+                if(id>4){
+                    id = 1
+                }
+                $('.letters').attr('src','/assets/letters-' + id + '.svg')
+
+            }, timer);
+        }, timer*0.375);
+
+    })
+</script>
+</body>
+</html>
