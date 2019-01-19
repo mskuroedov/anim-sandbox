@@ -72,17 +72,16 @@
         // var timerCss = $('.letters').css('animation');
         // var timerIndex = parseInt(timerCss.search(/\d/));
         // var timer = parseInt(timerCss[timerIndex])*1000;
-
         setTimeout(function () {
             var i = setInterval(function () {
                 id++;
                 if(id>4){
                     id = 1
                 }
-                $('.letters').attr('src','./assets/letters-' + id + '.svg')
+                $('.letters').attr('src', './assets/letters-' + id + '.svg');
 
             }, 2000);
-        }, 650);
+        }, 700);
 
     })
 </script>
