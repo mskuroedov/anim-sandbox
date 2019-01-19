@@ -25,6 +25,7 @@
             left: 5.5%;
             width: 80%;
             z-index: 20;
+            transition: clip-path .001s;
         }
         .base {
             left: 0;
@@ -63,10 +64,10 @@
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             }
             67%{
-                -webkit-clip-path: polygon(30% 0, 100% 0, 100% 100%, 30% 100%);
-                clip-path: polygon(30% 0, 100% 0, 100% 100%, 30% 100%);
+                -webkit-clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%);
+                clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%);
             }
-            75%{
+            68%{
 
                 -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -74,8 +75,8 @@
             100% {
                 transform: rotate(360deg);
 
-                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
+                /*clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
             }
         }
     </style>
